@@ -69,7 +69,7 @@ chmod 400 ~/.ssh/id_rsa
 ### 仮想マシンの起動(AWSなど)
 
 - クラウド、VMWareなどで、仮想マシンを立ち上げる
-- その際、鍵認証用の`private key` を同じにする
+- その際、鍵認証用の`private key` を同じで `public key` を設定する
 
 ### 『Ansible チュートリアル』をもとに作業する
 
