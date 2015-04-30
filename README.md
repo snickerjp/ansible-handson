@@ -1,2 +1,74 @@
 # ansible-handson
 Ansible ハンズオンの手順書
+
+---
+
+```
+Vagrant でやるのは、まだ時間がかかったりする可能性があるので・・・とりあえず『Ansible』が動くようにする
+```
+
+
+## 流れ
+
+### Ansible の Playbook を実行するマシン (ansible-setup)
+- 仮想マシンの起動(AWSなど)
+- `git` のインストール
+- `Ansible` のインストール
+- `private key`の配置
+- (optional) `Vagrant` のセットアップ
+
+### 構成管理されるマシン(slave)
+- 仮想マシンの起動(AWSなど)
+
+## 『Ansible の Playbook を実行するマシン (ansible-setup) 』のセットアップ
+
+### 仮想マシンの起動(AWSなど)
+
+- クラウド、VMWareなどで、仮想マシンを立ち上げる
+- その際、鍵認証用の`private key` を作成する
+- 手元に`private key` を落としておく
+
+### git のインストール
+
+```
+sudo yum install git
+```
+
+### Ansible のインストール
+
+#### Amazon Linuxの場合
+
+Amazon Linuxの場合は、EPELで入れるよ余計なパッケージ(python26)が追加されるので、pipで！
+```
+sudo pip install ansible
+```
+
+#### CentOS(epel)の場合
+
+思いのほか`EPEL`のパッケージが新しかったのでyumで！
+```
+sudo yum install http://ftp.riken.jp/Linux/fedora/epel/6/i386/epel-release-6-8.noarch.rpm
+sudo yum --enablerepo=epel install ansible
+```
+### private key の配置
+
+今、立ち上げたマシン(ansible-setup)で
+
+```
+cp private.pem ~/.ssh/id_rsa
+chmod 400 ~/.ssh/id_rsa
+```
+
+## 『構成管理されるマシン(slave)』のセットアップ
+
+### 仮想マシンの起動(AWSなど)
+
+- クラウド、VMWareなどで、仮想マシンを立ち上げる
+- その際、鍵認証用の`private key` を同じにする
+
+### 『Ansible チュートリアル』をもとに作業する
+
+[Ansible チュートリアル | Ansible Tutorial in Japanese](http://yteraoka.github.io/ansible-tutorial/)
+
+
+を参考に作業を進める！
