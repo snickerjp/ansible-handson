@@ -42,7 +42,7 @@ sudo yum install git
 
 #### Amazon Linuxの場合
 
-Amazon Linuxの場合は、EPELで入れるよ余計なパッケージ(python26)が追加されるので、pipで！
+Amazon Linuxの場合は、EPELで入れると余計なパッケージ(python26)が追加されるので、pipで！
 ```
 sudo pip install ansible
 ```
