@@ -20,6 +20,8 @@ Vagrant でやるのは、「まだ時間がかかったり」「つまったり
 ### 構成管理されるマシン(slave)
 - 仮想マシンの起動(AWSなど)
 
+--- 
+
 ## 『Ansible の Playbook を実行するマシン (ansible-setup) 』のセットアップ
 
 ### 仮想マシンの起動(AWSなど)
@@ -58,6 +60,7 @@ sudo yum --enablerepo=epel install ansible
 cp private.pem ~/.ssh/id_rsa
 chmod 400 ~/.ssh/id_rsa
 ```
+--- 
 
 ## 『構成管理されるマシン(slave)』のセットアップ
 
@@ -72,3 +75,5 @@ chmod 400 ~/.ssh/id_rsa
 
 
 を参考に作業を進める！
+
+『3. Ansible の疎通確認』 以降からの作業で大丈夫なはずー
