@@ -13,6 +13,7 @@ Vagrant でやるのは、「まだ時間がかかったり」「つまったり
 
 ### Ansible の Playbook を実行するマシン (ansible-setup)
 - 仮想マシンの起動(AWSなど)
+- host名を設定する
 - `git` のインストール
 - `Ansible` のインストール
 - `private key`の配置
@@ -30,6 +31,13 @@ Vagrant でやるのは、「まだ時間がかかったり」「つまったり
 - クラウド、VMWareなどで、仮想マシンを立ち上げる
 - その際、鍵認証用の`private key` を作成する
 - 手元に`private key` を落としておく
+
+### host名を設定する
+
+わからなくなっちゃうので、ホスト名を設定します
+```
+sudo hostname ansible-setup
+```
 
 ### git のインストール
 
@@ -70,6 +78,18 @@ chmod 400 ~/.ssh/id_rsa
 
 - クラウド、VMWareなどで、仮想マシンを立ち上げる
 - その際、鍵認証用の`private key` を同じで `public key` を設定する
+
+### host名を設定する
+
+わからなくなっちゃうので、ホスト名を設定します
+```
+sudo vi /etc/sysconfig/network
+
+HOSTNAME=slave
+
+sudo hostname slave
+```
+
 
 ### 『Ansible チュートリアル』をもとに作業する
 
